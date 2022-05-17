@@ -28,6 +28,7 @@ document.getElementById("submit").onclick=function() {
   var email = row.insertCell(4);
   var linkedin = row.insertCell(5);
   var img = row.insertCell(6);
+  var act = row.insertCell(7);
   name.innerHTML = document.getElementById("inputName").value;
   position.innerHTML = document.getElementById("inputPosition").value;
   address.innerHTML = document.getElementById("inputAddress").value;
@@ -35,11 +36,14 @@ document.getElementById("submit").onclick=function() {
   email.innerHTML = document.getElementById("inputEmail").value;
   linkedin.innerHTML = document.getElementById("inputURLlinkedin").value;
   img.innerHTML = document.getElementById("inputURLimage").value;
+  act.innerHTML = `<button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-primary"
+                          onclick='fillForm()'>Show</button>`;
 
+  // resetform();
   return false;
 }
 
-document.getElementById("resetform").onclick=function() {
+function resetform(){
   document.getElementById("myForm").reset();
 }
 
@@ -52,11 +56,38 @@ function resetTbl(){
   // document.getElementById("myTable").html("");
 }
 
-// document.getElementById("save").onclick=function (){
+document.getElementById("save").onclick=function() {
+  document.getElementById("myTable").style.display="block";
+
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(-1);
+  var name = row.insertCell(0);
+  var position = row.insertCell(1);
+  var address = row.insertCell(2);
+  var phone = row.insertCell(3);
+  var email = row.insertCell(4);
+  var linkedin = row.insertCell(5);
+  var img = row.insertCell(6);
+  var act = row.insertCell(7);
+
+  name.innerHTML = document.getElementById("inputName").value;
+  position.innerHTML = document.getElementById("inputPosition").value;
+  address.innerHTML = document.getElementById("inputAddress").value;
+  phone.innerHTML = document.getElementById("inputPhone").value;
+  email.innerHTML = document.getElementById("inputEmail").value;
+  linkedin.innerHTML = document.getElementById("inputURLlinkedin").value;
+  img.innerHTML = document.getElementById("inputURLimage").value;
+  act.innerHTML = `<button>View</button>`;
+
+  return false;
+}
+
+
+// function save(){
 //   var name = document.getElementById("inputName").val();
 //   var position = document.getElementById("inputPosition").val();
 //   var address = document.getElementById("inputAddress").val();
-//   var count = document.getElementById("myTable tr").length;
+//   // var count = document.getElementById("myTable tr").length;
 //   if (document.getElementById("inputName")!="" && document.getElementById("inputPosition")!="" &&
 //       document.getElementById("inputAddress")!="") {
 //     document.getElementById("myTable tbody").append('<tr class="child"><td>'+count+'</td><td>'+name+'</td><td>'+

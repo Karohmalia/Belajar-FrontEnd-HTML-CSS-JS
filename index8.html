@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Card Form Modal</title>
+  <title>AdminLTE 3 | Form Table</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -240,13 +240,19 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index6.html" class="nav-link active">
+                <a href="./index6.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Card Form Modal</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="./index7.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Form Table</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index8.html" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Form Table</p>
                 </a>
@@ -869,12 +875,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Card Form Modal</h1>
+            <h1 class="m-0">Form Table</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Card Form Modal</li>
+              <li class="breadcrumb-item active">Form Grid System</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -884,53 +890,94 @@
 
     <!-- Main content -->
     <div class="content">
-      <section class="content">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
             <div class="card card-primary">
-              <div class="card-header bg-gradient-purple">
+              <div class="card-header bg-gradient-indigo">
                 <h3 class="card-title">Fill the Form</h3>
               </div>
-              <form>
+              <form id="myForm">
                 <div class="card-body">
-                  <div class="form-group">
-                    <label for="inputName">Name</label>
-                    <input type="text" class="form-control" id="inputName" placeholder="Your Name">
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="inputName">Name</label>
+                        <input type="text" class="form-control" id="inputName" placeholder="Your Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPosition">Position</label>
+                        <input type="text" class="form-control" id="inputPosition" placeholder="Your Position">
+                      </div>
+                      <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Your Address">
+                      </div>
+                      <div class="form-group">
+                        <label for="inputPhone">Phone</label>
+                        <input type="text" class="form-control" id="inputPhone" placeholder="Your Phone Number">
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Your Email">
+                      </div>
+                      <div class="form-group">
+                        <label for="inputURLlinkedin">URL LinkedIn</label>
+                        <input type="url" class="form-control" id="inputURLlinkedin" placeholder="Your URL LinkedIn">
+                      </div>
+                      <div class="form-group">
+                        <label for="inputURLimage">URL Photos</label>
+                        <input type="url" class="form-control" id="inputURLimage" placeholder="Your URL Photos">
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <button type="button" class="btn btn-dark" onclick="resetform()">Reset</button>
+                      <button type="button" class="btn btn-primary" id="submit">Submit</button>
+                      <closeform></closeform>
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <label for="inputPosition">Position</label>
-                    <input type="text" class="form-control" id="inputPosition" placeholder="Your Position">
-                  </div>
-                  <div class="form-group">
-                    <label for="inputAddress">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="Your Address">
-                  </div>
-                  <div class="form-group">
-                    <label for="inputPhone">Phone</label>
-                    <input type="text" class="form-control" id="inputPhone" placeholder="Your Phone Number">
-                  </div>
-                  <div class="form-group">
-                    <label for="inputEmail">Email</label>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Your Email">
-                  </div>
-                  <div class="form-group">
-                    <label for="inputURLlinkedin">URL LinkedIn</label>
-                    <input type="url" class="form-control" id="inputURLlinkedin" placeholder="Your URL LinkedIn">
-                  </div>
-                  <div class="form-group">
-                    <label for="inputURLimage">URL Photos</label>
-                    <input type="url" class="form-control" id="inputURLimage" placeholder="Your URL Photos">
-                  </div>
+
                 </div>
-                <div class="card-footer">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-primary"
-                          onclick='fillForm()'>Submit</button>
-                </div>
+
               </form>
             </div>
           </div>
 
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-header border-0 bg-gradient-lightblue">
+                <div class="d-flex justify-content-between">
+                  <h3 class="card-title">Form Grid System</h3>
+                </div>
+              </div>
+              <div class="card-body">
+                <table class="table table-valign-middle table-bordered" id="myTable">
+                  <thead>
+                  <tr class="bg-gradient-teal">
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>URL LinkedIn</th>
+                    <th>URL Image</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-dark" onclick='resetTbl()'>Reset</button>
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
           <!-- /.col-md-6 -->
         </div>
         <!-- /.row -->
@@ -951,7 +998,7 @@
                 <div class="card-header border-0">
                   <div class="d-flex justify-content-between">
                     <h3 class="card-title" style="color: #0a0e14">Card</h3>
-                    <a id='linkedin' href="#" target="_blank">View LinkedIn</a>
+                    <a id='linkedin' href="#">View LinkedIn</a>
                   </div>
                 </div>
                 <div class="card-body">
@@ -992,7 +1039,7 @@
           </div>
         </div>
       </div>
-      </section>
+
     </div>
     <!-- /.content -->
   </div>
@@ -1023,10 +1070,9 @@
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE -->
 <script src="dist/js/adminlte.js"></script>
-<script src="plugins/sweetalert2/sweetalert2.min.js"></script>
-<script src="plugins/toastr/toastr.min.js"></script>
 <!--KartuNama-->
 <script src="dist/js/kartunama.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <!-- OPTIONAL SCRIPTS -->
 <script src="plugins/chart.js/Chart.min.js"></script>
@@ -1034,6 +1080,5 @@
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard3.js"></script>
-
 </body>
 </html>
